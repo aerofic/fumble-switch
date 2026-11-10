@@ -1,0 +1,9 @@
+{
+  "FUMBLE_SWITCH.settings.cheatStrategy.range": "区间限定（区间内均匀取值）",
+  "FUMBLE_SWITCH.settings.diceSettingsMenu.hint": "配置受影响的骰型、方向和各骰型的取值区间。",
+  "FUMBLE_SWITCH.settingsMenu.rangeMin": "最小值",
+  "FUMBLE_SWITCH.settingsMenu.rangeMax": "最大值",
+  "FUMBLE_SWITCH.settingsMenu.rangeNotes": "区间限定模式中，调好和调坏共用区间，忽略高低方向；包含两端，各整数等概率。关闭时保留原骰。此模式不会发布调骰提示或改变骰子颜色；较窄的区间仍可能从长期统计中被察觉。",
+  "FUMBLE_SWITCH.settingsMenu.invalidRange": "{die} 的区间无效：请输入满足 1 ≤ 最小值 ≤ 最大值 ≤ {faces} 的整数。未保存任何设置。",
+  "FUMBLE_SWITCH.debug.modifier.range": "区间 [{min}, {max}]（均匀分布）"
+}

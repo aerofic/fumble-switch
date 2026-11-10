@@ -1,0 +1,34 @@
+<form>
+  <p class="notes">{{localize "FUMBLE_SWITCH.settingsMenu.notes"}} <strong>{{globalDirection}}</strong></p>
+  <p class="notes">{{localize "FUMBLE_SWITCH.settingsMenu.rangeNotes"}}</p>
+  <table>
+    <thead>
+      <tr>
+        <th>{{localize "FUMBLE_SWITCH.settingsMenu.die"}}</th>
+        <th>{{localize "FUMBLE_SWITCH.settingsMenu.enabled"}}</th>
+        <th>{{localize "FUMBLE_SWITCH.settingsMenu.direction"}}</th>
+        <th>{{localize "FUMBLE_SWITCH.settingsMenu.rangeMin"}}</th>
+        <th>{{localize "FUMBLE_SWITCH.settingsMenu.rangeMax"}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each dice}}
+      <tr>
+        <td><strong>{{die}}</strong></td>
+        <td><input type="checkbox" name="affected-{{die}}" {{#if affected}}checked{{/if}} /></td>
+        <td>
+          <select name="direction-{{die}}">
+            <option value="higher" {{#if (eq direction "higher")}}selected{{/if}}>{{localize "FUMBLE_SWITCH.settingsMenu.higher"}}</option>
+            <option value="lower" {{#if (eq direction "lower")}}selected{{/if}}>{{localize "FUMBLE_SWITCH.settingsMenu.lower"}}</option>
+          </select>
+        </td>
+        <td><input type="number" name="range-min-{{die}}" value="{{min}}" min="1" max="{{faces}}" step="1" required aria-label="{{die}} {{localize 'FUMBLE_SWITCH.settingsMenu.rangeMin'}}" /></td>
+        <td><input type="number" name="range-max-{{die}}" value="{{max}}" min="1" max="{{faces}}" step="1" required aria-label="{{die}} {{localize 'FUMBLE_SWITCH.settingsMenu.rangeMax'}}" /></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <footer class="sheet-footer flexrow">
+    <button type="submit"><i class="fas fa-save"></i> {{localize "FUMBLE_SWITCH.settingsMenu.save"}}</button>
+  </footer>
+</form>
